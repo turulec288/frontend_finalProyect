@@ -5,6 +5,7 @@ import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import PrivateRoute from './components/PrivateRoute'
+import AllAdsPages from './pages/AllAdsPages'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,11 +17,20 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage/>
+              <HomePage />
             </PrivateRoute>
           }
         />
-        
+
+        <Route
+          path="/allAds"
+          element={
+            <PrivateRoute>
+              <AllAdsPages />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
